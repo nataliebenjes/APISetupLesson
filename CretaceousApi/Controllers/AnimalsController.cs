@@ -68,6 +68,8 @@ namespace CretaceousApi.Controllers
     {
       return _db.Animals.Any(e => e.AnimalId == id);
     }
+
+    //  [ApiExplorerSettings(IgnoreApi = true)]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAnimal(int id)
     {
@@ -82,6 +84,8 @@ namespace CretaceousApi.Controllers
 
       return NoContent();
     }
+
+    //api/animals
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Animal>>> Get(String species, string name, int minimumAge, int age)
     {
